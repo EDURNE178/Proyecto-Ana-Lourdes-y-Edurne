@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERVICIO DE TC</title>
+  <style>
+    body {
+      font-family: 'Pacífico', Roboto;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+        overflow: hidden;
+        height: 300px;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("FOTOS/1.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: 0;
+    }
+
+    header h1 {
+    text-align: center;
+      position: relative;
+      color: #569d47;
+      font-size: 6em;
+    font-family: 'Pacífico'
+      margin: 0;
+      padding: 50px 30px;
+      z-index: 1;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #e8f5e9;
+      padding: 10px 0;
+    }
+
+    nav button {
+      background-color: transparent;
+      border: none;
+      color: #559d46;
+      font-size: 1em;
+      margin: 5px 15px;
+      cursor: pointer;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      background-color: white;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h2 {
+    text-align: center;
+      color: #559d46;
+    }
+
+    h3 {
+      margin-top: 20px;
+        text-align: justify;
+        color: #559d46;
+    }
+
+    img {
+       max-width: 100%;
+      height: auto;
+      border: 5px solid #4CAF50;
+      border-radius: 10px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .star {
+      font-size: 2rem;
+      cursor: pointer;
+      color: gray;
+      transition: color 0.2s;
+    }
+
+    .star.hover,
+    .star.selected {
+      color: gold;
+    }
+
+    .feedback-results {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .thumb {
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+
+    .thumbs-up {
+      color: green;
+    }
+
+    .thumbs-down {
+      color: red;
+    }
+       p {
+      text-align: justify;      
+      font-style: normal;       
+      font-weight: normal;      
+      font-size: 1rem;          
+      color: black;             
+      font-family: sans-serif;  
+      margin: 0;               
+      padding: 0;              
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><i> SERVICIO DE TC </i></h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarSeccion('inicio')">INICIO</button>
+    <button onclick="mostrarSeccion('abdomen')">TC Abdomen</button>
+    <button onclick="mostrarSeccion('torax')">TC Tórax</button>
+    <button onclick="mostrarSeccion('cabeza')">TC Cabeza</button>
+    <button onclick="mostrarSeccion('pelvis')">TC Pelvis</button>
+    <button onclick="mostrarSeccion('torax_abdomen')">TC Tórax-abdomen</button>
+    <button onclick="mostrarSeccion('cervical')">TC Cervical</button>
+    <button onclick="mostrarSeccion('senos')">TC Senos paranasales </button>
+    <button onclick="mostrarSeccion('columna')">TC Columna-cervical</button>
+     <button onclick="mostrarSeccion('preguntas')">PREGUNTAS FRECUENTES</button>
+    <button onclick="mostrarSeccion('valoracion')">VALORACIÓN</button>
+  </nav>
+
+  <div id="inicio" class="section active">
+    <h2>¿Qué es una Tomografía Computarizada (TC)?</h2>
+    <img src="FOTOS/2.jpeg" style="width: 35%; height: 40%;" >
+    <p>La Tomografía Computarizada (TC), también conocida como TAC o escáner, es una técnica de diagnóstico por imagen que utiliza rayos X combinados con tecnología computarizada para obtener imágenes transversales de alta precisión del interior del cuerpo. Estas imágenes permiten observar con gran detalle órganos, huesos, vasos sanguíneos y tejidos blandos.
+</p>
+    <hr>
+    
+         <h2>¿Para qué se utiliza? </h2>
+         <p>La TC es una herramienta fundamental para la detección, diagnóstico y seguimiento de diversas condiciones médicas, tales como:
+          <ul>
+              <li>    Evaluación de lesiones internas y fracturas óseas.</li>
+              <li>    Detección de tumores, infecciones y hemorragias.</li>
+              <li>    Diagnóstico de enfermedades pulmonares, abdominales y cerebrales.</li>
+              <li>    Guía en procedimientos médicos como biopsias o cirugías.</li>
+              <li>    Control y seguimiento de tratamientos médicos.</li>
+              </ul>
+</p>
+<hr>
+ <h2>¿Cómo se realiza el examen? </h2>
+  <p>Durante la prueba, el paciente se recuesta sobre una camilla que se desplaza lentamente a través del escáner, una máquina en forma de aro. Este equipo captura imágenes en cortes transversales que, combinadas, permiten obtener una vista tridimensional de la zona estudiada.</p>
+<p>En ciertos casos, se puede administrar un medio de contraste por vía oral o intravenosa para mejorar la visibilidad de estructuras específicas.</p>
+<hr>
+<h2>Duración y preparación</h2>
+<p>El examen suele durar entre 5 y 30 minutos, dependiendo del área a estudiar y del uso de contraste. En algunos casos, se recomienda ayuno previo y comunicar al equipo médico cualquier medicamento que se esté tomando. </p>
+              <img src="FOTOS/3.jpeg"style="width: 20%; height: 20%;">
+<hr>
+<h2>Seguridad y consideraciones</h2>
+<p>La TC utiliza radiación ionizante, pero la dosis está cuidadosamente controlada para minimizar riesgos. Su realización está justificada cuando el beneficio diagnóstico supera ampliamente cualquier posible riesgo.</p>
+<p>Es fundamental informar al equipo médico si está embarazada o existe sospecha de embarazo, para evaluar alternativas o precauciones necesarias.</p>
+<hr>
+<h2>Resultados e interpretación</h2>
+<p>Las imágenes obtenidas son analizadas por un radiólogo, especialista en diagnóstico por imagen, quien elaborará un informe detallado. Este será entregado al médico solicitante para explicar los hallazgos y decidir los pasos a seguir en el tratamiento o seguimiento..</p>
+  </div>
+
+  <div id="abdomen" class="section">
+    <h2>TC ABDOMEN</h2>
+    <h3><i> Introducción</i> </h3>
+    <p>La Tomografía Computarizada Abdominal es un estudio radiológico avanzado que permite obtener imágenes detalladas del abdomen y la pelvis. Gracias a su alta resolución, la TC abdominal es fundamental para evaluar órganos vitales como el hígado, páncreas, riñones, bazo, intestinos y vasos sanguíneos, facilitando el diagnóstico de múltiples patologías como inflamaciones, tumores, infecciones, traumatismos y enfermedades vasculares.</p>
+      <img src="FOTOS/4.jpeg"tyle="width: 20%; height: 20%;">
+      <hr>
+    <h3><i> Preparación Previa</i></h3>
+    <p>Para garantizar la calidad y precisión del examen, es importante seguir ciertas indicaciones antes de la prueba:
+<ul>
+      <li> <u><i>Ayuno:</i></u> Se recomienda no ingerir alimentos sólidos al menos 4 a 6 horas antes del estudio, aunque se permite tomar agua.</li>
+      <li> <u><i>Medio de contraste:</i></u> En muchos casos, se administra un medio de contraste por vía oral para resaltar el tracto gastrointestinal y/o intravenosa para mejorar la visualización de vasos y órganos. Se debe informar al equipo médico sobre alergias previas a contrastes o medicamentos.</li>
+      <li><u><i>Medicamentos: </i></u> Consulte con su médico sobre la continuidad o suspensión de medicamentos antes del examen.</li>
+      <li><u><i>Información médica:</i></u> Informe si está embarazada, tiene problemas renales o diabetes, ya que estos factores pueden influir en la realización del estudio.</li>
+      </ul>
+      </p>
+      <hr>
+    <h3><i>Ventajas de la TC Abdominal</i></h3>
+    <ul>
+      <li><u><i>Imágenes detalladas:</i> </u>Permite observar con alta resolución estructuras internas complejas del abdomen.</li>
+      <li><u><i>Diagnóstico rápido y preciso: </i> </u> Es una herramienta clave para identificar enfermedades agudas como apendicitis, abscesos, o sangrados internos.</li>
+      <li><u><i>Evaluación integral: </i> </u> Visualiza múltiples órganos en una sola exploración, facilitando un diagnóstico completo.</li>
+        <li><u><i>Guía para procedimientos: </i> </u> Ayuda en la planificación y orientación de biopsias o cirugías. </li>
+         <li><u><i>No invasiva: </i> </u>La prueba no requiere incisiones ni ingreso hospitalario en la mayoría de los casos </li>
+    </ul>
+      <hr>
+    <h3><i>Desventajas y consideraciones </i></h3>
+    <ul>
+      <li><u><i>Radiación ionizante: </i> </u>  Aunque la dosis está controlada, la TC utiliza radiación, lo que implica riesgos que se deben considerar, especialmente en pacientes jóvenes o embarazadas.</li>
+     <li><u><i>Reacciones al contraste: </i> </u>  En algunos casos, la administración del medio de contraste puede generar reacciones alérgicas o efectos secundarios como náuseas o sensación de calor.</li> 
+        <li><u><i>Limitaciones en ciertas condiciones:</i> </u>  No siempre detecta lesiones muy pequeñas o problemas funcionales que requieren otras técnicas complementarias, como resonancia magnética o ultrasonido.</li>
+         <li><u><i>Costo: </i> </u>  En algunos lugares, la TC puede ser una prueba costosa y no siempre disponible de inmediato.</li>
+    </ul>
+      <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La Tomografía Computarizada Abdominal es un examen diagnóstico esencial y eficaz para el estudio detallado de las patologías abdominales. Su capacidad para generar imágenes precisas y rápidas la convierte en una herramienta indispensable en la práctica clínica moderna. Sin embargo, debe emplearse con criterio médico, considerando los beneficios frente a los posibles riesgos, para garantizar la mejor atención al paciente.</p>
+    <img src="FOTOS/5.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+    <div id="torax" class="section">
+    <h2>TC TÓRAX</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada de Tórax es una técnica de imagen diagnóstica que permite obtener cortes transversales detallados del pecho, incluyendo pulmones, corazón, vasos sanguíneos, tráquea, bronquios y estructuras óseas del tórax. Esta prueba es fundamental para la evaluación precisa de enfermedades respiratorias, cardiovasculares y oncólogicas, así como para el estudio de traumatismos y malformaciones en la región torácica.</p>
+         <img src="FOTOS/6.jpeg"style="width: 20%; height: 20%;">
+        <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p>Para obtener resultados óptimos y garantizar la seguridad del paciente, se recomienda:
+<ul>
+      <li> <u><i>Ayuno:</i></u> Generalmente no es necesario ayuno previo, salvo indicación específica del médico.</li>
+      <li> <u><i>Medio de contraste:</i></u> En algunos casos, se administra contraste intravenoso para resaltar vasos sanguíneos y tejidos, especialmente en estudios vasculares o tumorales. Es fundamental informar sobre alergias o problemas renales. </li>
+      <li><u><i>Medicamentos: </i></u>Informe a su médico sobre medicamentos actuales, en particular si toma anticoagulantes o tiene condiciones especiales.</li>
+    <li><u><i>Condiciones especiales:</i> </u>Informe si está embarazada o sospecha estarlo para evaluar alternativas o precauciones necesarias.</li>
+      </ul>
+      </p>
+        <hr>
+    <h3><i>Ventajas de la TC de Tórax</i></h3>
+    <ul>
+      <li><u><i>Imágenes precisas y detalladas: </i> </u>Permite identificar lesiones pulmonares, nódulos, infiltrados, embolias pulmonares, y otras alteraciones con gran claridad.</li>
+      <li><u><i>Diagnóstico rápido:</i> </u>Es una herramienta esencial en emergencias para evaluar traumatismos, infecciones o problemas vasculares. </li>
+      <li><u><i>Evaluación completa:</i> </u> Visualiza simultáneamente múltiples estructuras del tórax en alta resolución.</li>
+        <li><u><i> No invasiva:</i> </u> El examen es indoloro y no requiere hospitalización. </li>
+         <li><u><i>Guía en procedimientos:</i> </u>Facilita la planificación de biopsias, drenajes o cirugías torácicas. </li>
+    </ul>
+        <hr>
+
+    <h3><i>Desventajas y consideraciones</i> </h3>
+    <ul>
+      <li><u><i> Exposición a radiación:</i> </u>  La TC usa rayos X, lo que implica una dosis de radiación, la cual se controla cuidadosamente pero debe considerarse, sobre todo en pacientes jóvenes o embarazadas. </li>
+     <li><u><i>Reacciones al medio de contraste: </i> </u>  Aunque son poco frecuentes, pueden presentarse alergias o efectos secundarios temporales como náuseas o sensación de calor. </li> 
+        <li><u><i>Limitaciones en ciertas patologías: </i> </u> No siempre detecta problemas funcionales o enfermedades muy tempranas sin cambios anatómicos evidentes, que podrían requerir estudios complementarios. </li>
+         <li><u><i>Costo y disponibilidad:</i> </u> Puede ser más costosa y no estar disponible inmediatamente en todos los centros médicos.</li>
+    </ul>
+        <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La Tomografía Computarizada de Tórax es una herramienta diagnóstica fundamental en la medicina moderna que proporciona información detallada y rápida para el diagnóstico y manejo de múltiples enfermedades torácicas. Su uso debe estar siempre justificado y supervisado por un profesional, considerando los beneficios diagnósticos frente a los riesgos asociados a la radiación y al contraste, para asegurar la mejor atención y seguridad del paciente.</p>
+    <img src="FOTOS/7.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+
+    <div id="cabeza" class="section">
+    <h2>TC CEREBRAL</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada Cerebral es un examen de diagnóstico por imagen que utiliza rayos X y tecnología computarizada para obtener imágenes transversales detalladas del cerebro y estructuras circundantes. Esta prueba es esencial para detectar lesiones, hemorragias, tumores, malformaciones vasculares y otras patologías neurológicas con rapidez y precisión.</p>
+         <img src="FOTOS/8.jpeg"style="width: 20%; height: 20%;">
+        <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p>Para garantizar la seguridad y eficacia del estudio, se recomienda:
+<ul>
+      <li> <u><i>Ayuno:</i></u> En general, no se requiere ayuno, salvo que se utilice medio de contraste.</li>
+      <li> <u><i>Medio de contraste: </i></u>  En ciertos casos, se administra contraste intravenoso para mejorar la visualización de vasos sanguíneos y lesiones. Informe sobre alergias o problemas renales.</li>
+      <li><u><i>Medicamentos:  </i></u> Informe al médico sobre los medicamentos que esté tomando.</li>
+    <li><u><i>Condiciones especiales: </i> </u>Comunicar si está embarazada o si hay sospecha de embarazo para evaluar riesgos y alternativas.</li>
+      </ul>
+      </p>
+        <hr>
+    <h3><i>Ventajas de la TC Cerebral</i></h3>
+    <ul>
+      <li><u><i>Detección rápida de emergencias: </i> </u>Identifica hemorragias, accidentes cerebrovasculares, traumatismos y otras urgencias neurológicas de forma inmediata.</li>
+      <li><u><i>Alta resolución:</i> </u>  Permite visualizar estructuras óseas, ventriculares y tejido cerebral con gran detalle.</li>
+      <li><u><i>Procedimiento no invasivo y rápido: </i> </u>Generalmente dura pocos minutos y no requiere hospitalización. </li>
+        <li><u><i>Guía diagnóstica y terapéutica: </i> </u>  Ayuda a planificar tratamientos y procedimientos quirúrgicos. </li>
+    </ul>
+        <hr>
+    <h3><i>Desventajas y consideraciones</i> </h3>
+    <ul>
+      <li><u><i> Exposición a radiación: </i> </u> Aunque controlada, la radiación ionizante debe ser considerada, especialmente en niños y mujeres embarazadas. </li>
+     <li><u><i>Reacciones al contraste: </i> </u> Riesgo bajo de alergias o efectos secundarios con el uso de medio de contraste. </li> 
+        <li><u><i>Limitaciones funcionales: </i> </u>No proporciona información sobre función cerebral ni actividad metabólica, que requieren otros estudios complementarios.</li>
+         <li><u><i>No sustituye estudios más avanzados: </i> </u>En algunos casos es necesario complementar con resonancia magnética (RM). </li>
+    </ul>
+        <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La Tomografía Computarizada Cerebral es una herramienta diagnóstica vital para la valoración rápida y eficaz de múltiples patologías neurológicas. Su uso debe ser siempre evaluado por profesionales de la salud para maximizar beneficios diagnósticos y minimizar riesgos, garantizando una atención segura y precisa.</p>
+    <img src="FOTOS/9.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+     <div id="pelvis" class="section">
+    <h2>TC PÉLVICA</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada de Pelvis es un estudio de imagen que permite obtener cortes detallados de la región pélvica, incluyendo órganos como la vejiga, próstata en hombres, útero y ovarios en mujeres, así como músculos, huesos y vasos sanguíneos. Es una herramienta clave para el diagnóstico de diversas patologías como tumores, infecciones, traumatismos y enfermedades inflamatorias en la pelvis.</p>
+         <img src="FOTOS/10.jpeg"style="width: 20%; height: 20%;">
+         <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p>Para asegurar la calidad y seguridad del examen, se recomienda:
+<ul>
+      <li> <u><i>Ayuno: </i></u> Generalmente se indica no ingerir alimentos sólidos 4 a 6 horas antes del estudio; el agua está permitida.</li>
+      <li> <u><i>Medio de contraste: </i></u> En muchos casos se administra contraste oral y/o intravenoso para mejorar la visualización de órganos y vasos. Informe sobre alergias y problemas renales. </li>
+      <li><u><i>Medicamentos:  </i></u>Consulte con su médico si debe suspender algún medicamento antes del examen.</li>
+    <li><u><i>Condiciones especiales:</i> </u> Informe si está embarazada o existe sospecha para tomar las precauciones necesarias.</li>
+      </ul>
+      </p>
+         <hr>
+    <h3><i>Ventajas de la TC Pélvica</i></h3>
+    <ul>
+      <li><u><i>Alta resolución: </i> </u>Permite observar con gran detalle estructuras óseas, musculares y órganos pélvicos.</li>
+      <li><u><i>Diagnóstico integral:</i> </u> Facilita la detección de tumores, abscesos, cálculos, fracturas y otras patologías.</li>
+      <li><u><i>Rapidez:</i> </u>El estudio suele ser rápido y eficiente para situaciones de emergencia. </li>
+        <li><u><i>Guía para procedimientos:  </i> </u> Ayuda en la planificación de cirugías, biopsias y tratamientos específicos. </li>
+    </ul>
+         <hr>
+    <h3><i>Desventajas y consideraciones </i></h3>
+    <ul>
+      <li><u><i>Radiación ionizante:  </i> </u> Implica exposición controlada a rayos X, que debe considerarse especialmente en pacientes jóvenes y embarazadas.  </li>
+     <li><u><i>Reacciones alérgicas: </i> </u> Posibles efectos secundarios al medio de contraste, aunque poco frecuentes. </li> 
+        <li><u><i>Limitaciones en evaluación funcional:</i> </u> No evalúa la función fisiológica de órganos, pudiendo requerir estudios adicionales. </li>
+         <li><u><i>Costo y accesibilidad:</i> </u> Puede no estar disponible en todos los centros o ser más costosa que otros estudios.</li>
+    </ul>
+         <hr>
+    <h3><i>Conclusión </i></h3>
+    <p>La Tomografía Computarizada de Pelvis es un examen indispensable para el diagnóstico y manejo de diversas enfermedades pélvicas. Su utilización debe ser siempre justificada y supervisada por especialistas, equilibrando sus beneficios diagnósticos con los riesgos asociados para brindar la mejor atención al paciente.</p>
+    <img src="FOTOS/11.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+     <div id="torax_abdomen" class="section">
+    <h2>TC TORACOABDOMINAL</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada Tórax-Abdomen es un estudio de diagnóstico por imagen que combina la exploración detallada de ambas regiones anatómicas en una sola prueba. Permite evaluar simultáneamente órganos vitales como pulmones, corazón, hígado, riñones, bazo, vasos sanguíneos y estructuras óseas. Este examen es fundamental para el diagnóstico integral de enfermedades que afectan múltiples sistemas, como infecciones, tumores, traumatismos y patologías vasculares.</p>
+          <img src="FOTOS/12.jpeg"style="width: 20%; height: 20%;">
+         <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p>Para garantizar un examen óptimo y seguro, se recomienda:
+<ul>
+      <li> <u><i>Ayuno: </i></u> Se aconseja no consumir alimentos sólidos durante 4 a 6 horas antes del estudio; el agua está permitida.</li>
+      <li> <u><i>Medio de contraste:</i></u> En la mayoría de los casos se utiliza contraste intravenoso para mejorar la visualización de vasos sanguíneos y órganos. Informe al equipo médico sobre alergias o problemas renales.</li>
+      <li><u><i>Medicamentos:  </i></u>Consulte con su médico sobre la suspensión o continuación de medicamentos antes de la prueba.</li>
+    <li><u><i>Condiciones especiales: </i> </u>Informe si está embarazada o sospecha embarazo para adoptar las precauciones necesarias.</li>
+      </ul>
+      </p>
+         <hr>
+    <h3><i>Ventajas de la TC Toracicoabdominal</i></h3>
+    <ul>
+      <li><u><i>Evaluación integral y rápida:</i> </u>Permite obtener imágenes detalladas de dos regiones anatómicas clave en un solo estudio.</li>
+      <li><u><i>Detección precisa: </i> </u>Facilita el diagnóstico de múltiples patologías simultáneamente, ahorrando tiempo y reduciendo la necesidad de estudios adicionales.</li>
+      <li><u><i><Alta resolución: /i> </u>Proporciona imágenes claras y definidas de órganos, vasos y tejidos.</li>
+        <li><u><i> Útil en emergencias: </i> </u>  Ideal para evaluar traumatismos, infecciones diseminadas y procesos oncológicos extensos. </li>
+    </ul>
+          <hr>
+    <h3><i>Desventajas y consideraciones </i></h3>
+    <ul>
+      <li><u><i> Exposición a radiación: </i> </u> La combinación de ambas áreas implica una dosis mayor de radiación, que debe ser justificada y controlada. </li>
+     <li><u><i>Reacciones al contraste:</i> </u> Posibles alergias o efectos secundarios, aunque infrecuentes. </li> 
+        <li><u><i>Limitaciones funcionales:</i> </u> No evalúa funciones fisiológicas, pudiendo requerir estudios complementarios. </li>
+         <li><u><i>Costo y disponibilidad:</i> </u> Puede ser un procedimiento más costoso y no siempre está disponible en todos los centros. </li>
+    </ul>
+          <hr>
+    <h3><i>Conclusión </i></h3>
+    <p>La Tomografía Computarizada Tórax-Abdomen es una herramienta diagnóstica esencial para el estudio integral de múltiples patologías que afectan estas regiones, optimizando el tiempo y los recursos médicos. Su indicación debe ser cuidadosamente valorada por el equipo médico para asegurar un equilibrio adecuado entre beneficio diagnóstico y seguridad del paciente.</p>
+    <img src="FOTOS/13.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+        <div id="cervical" class="section">
+    <h2>TC CERVICAL</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada Cervical es una técnica de imagen que permite obtener cortes detallados de la columna cervical (cuello). Se utiliza principalmente para evaluar lesiones óseas, hernias discales, degeneración de vértebras, fracturas, tumores, infecciones y otras patologías que afectan esta zona. Gracias a su alta precisión, es una herramienta esencial para el diagnóstico rápido y eficaz de condiciones cervicales.</p>
+            <img src="FOTOS/14.jpeg"style="width: 20%; height: 20%;">
+            <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p> Generalmente, la TC cervical no requiere una preparación extensa, pero es importante tener en cuenta: </p>
+<ul>
+      <li> <u><i>Ayuno: </i></u> En la mayoría de los casos no es necesario, salvo que se utilice medio de contraste.</li>
+      <li> <u><i>Medio de contraste:</i></u> Puede ser necesario en algunos estudios para visualizar mejor los vasos sanguíneos o tejidos blandos. Es importante informar sobre alergias, problemas renales o antecedentes médicos relevantes. </li>
+      <li><u><i>Ropa y objetos metálicos: </i></u>Se recomienda acudir con ropa cómoda y sin objetos metálicos en el cuello o cabeza (collares, aretes, horquillas, etc.). </li>
+        <li><u><i>Comunicación médica:</i> </u>Informe al personal si está embarazada, sospecha estarlo o si ha tenido procedimientos quirúrgicos previos en la zona cervical.</li>
+      </ul>
+            <hr>
+    <h3><i>Ventajas de la TC Cervical</i></h3>
+    <ul>
+      <li><u><i>Alta resolución de estructuras óseas: </i> </u>Excelente para observar vértebras, discos y articulaciones.</li>
+      <li><u><i>Rapidez y eficacia: </i> </u> Procedimiento rápido, ideal en casos de trauma o urgencias. </li>
+      <li><u><i>Detección precisa de lesiones:</i> </u> Facilita la identificación de fracturas, malformaciones, infecciones y compresiones medulares.</li>
+        <li><u><i> Complemento ideal a la RM: </i> </u>En algunos casos, se utiliza junto a la resonancia magnética para una evaluación más completa.</li>
+    </ul>
+
+            <hr>
+    <h3><i>Desventajas y consideraciones </i></h3>
+    <ul>
+      <li><u><i> Radiación: </i> </u> Usa rayos X, lo que implica una exposición controlada. No debe realizarse sin justificación médica, especialmente en pacientes jóvenes. </li>
+     <li><u><i>Limitaciones en tejidos blandos: </i> </u> Aunque buena para hueso, puede no mostrar detalles finos de médula espinal o nervios (donde la resonancia es más adecuada). </li> 
+        <li><u><i>Reacciones al contraste:</i> </u> En caso de usarse, puede haber efectos secundarios poco frecuentes. </li>
+         <li><u><i>Restricciones en embarazo: </i> </u> No se recomienda su uso en mujeres embarazadas, salvo situaciones de urgencia médica.</li>
+    </ul>
+            <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La Tomografía Computarizada Cervical es una técnica rápida, precisa y confiable para evaluar patologías del cuello, especialmente las relacionadas con estructuras óseas. Es una herramienta muy útil tanto en emergencias como en estudios programados, y debe realizarse bajo indicación médica para garantizar un uso seguro y eficaz.</p>
+    <img src="FOTOS/15.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+          
+       <div id="senos" class="section">
+    <h2>TC SENOS PARANASALES</h2>
+    <h3><i>Introducción</i></h3>
+    <p>La Tomografía Computarizada de Senos Paranasales es una técnica de imagen especializada para evaluar las cavidades óseas que rodean la nariz: senos maxilares, etmoidales, frontales y esfenoidales. Este estudio ofrece imágenes de alta resolución que permiten visualizar con gran detalle estas estructuras, siendo fundamental para el diagnóstico y seguimiento de enfermedades como la sinusitis, pólipos nasales, malformaciones anatómicas, fracturas faciales y tumores. </p>
+            <img src="FOTOS/16.jpeg"style="width: 20%; height: 20%;">
+           <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p> En la mayoría de los casos, la TC de senos paranasales no requiere preparación especial. Sin embargo, es importante tener en cuenta lo siguiente:
+<ul>
+      <li> <u><i>Ayuno:</i></u>No se requiere ayuno, ya que generalmente no se utiliza medio de contraste.</li>
+      <li> <u><i>Medio de contraste:</i></u>En casos especiales, como sospecha de tumores o estudio de estructuras vasculares, puede indicarse el uso de contraste intravenoso. Informe siempre si tiene alergias, enfermedad renal o está embarazada. </li>
+      <li><u><i> Ropa y objetos metálicos:</i></u>Retire aretes, piercings, gafas, prótesis dentales y cualquier objeto metálico en la cabeza o cuello. </li>
+        <li><u><i>Indicaciones médicas: </i> </u>Informe sobre cirugías nasales previas, enfermedades respiratorias crónicas o síntomas actuales.</li>
+      </ul>
+      </p>
+           <hr>
+    <h3><i>Ventajas de la TC Senos Paranasales</i></h3>
+    <ul>
+      <li><u><i>Alta resolución de estructuras óseas y cavidades aéreas.</i> </u></li>
+      <li><u><i>Detección precisa de sinusitis crónica, aguda y complicaciones.</i> </u>  </li>
+      <li><u><i>Identificación de pólipos, quistes o masas.</i> </u> </li>
+        <li><u><i>  Guía preoperatoria para cirugías nasales o funcionales endoscópicas.</i> </u>.</li>
+         <li><u><i>Rápida y no invasiva.</i> </u></li>
+    </ul>
+           <hr>
+    <h3><i>Desventajas y consideraciones</i> </h3>
+    <ul>
+        <li><u><i>Exposición a radiación:</i> </u>Aunque mínima, la dosis de rayos X está presente y debe ser justificada clínicamente.</li>
+      <li><u><i>Limitaciones en tejidos blandos: </i> </u> La resonancia magnética puede ser preferida para estudio detallado de tejidos blandos o sospechas de extensión intracraneal. </li>
+      <li><u><i>No indicada durante el embarazo: </i> </u>Salvo en casos imprescindibles y con protección adecuada. </li>
+    </ul>
+           <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La TC de Senos Paranasales es una herramienta diagnóstica fundamental en otorrinolaringología, especialmente útil en la evaluación de sinusitis persistentes, pólipos y planificación quirúrgica. Es rápida, segura y proporciona información anatómica clave para un tratamiento eficaz y personalizado.
+</p>
+    <img src="FOTOS/17.jpeg"style="width: 20%; height: 20%;">
+  </div>
+
+           <div id="columna" class="section">
+    <h2>TC COLUMNA-CERVICAL</h2>
+
+    <h3>I<i>ntroducción</i></h3>
+    <p>La Tomografía Computarizada de la Columna Cervical es una técnica de imagen que permite obtener cortes detallados y en alta resolución de las vértebras del cuello (C1 a C7), discos intervertebrales, articulaciones y estructuras adyacentes. Se emplea principalmente para diagnosticar fracturas, hernias discales, artrosis cervical, compresiones medulares, tumores y lesiones traumáticas o degenerativas.</p>
+               <img src="FOTOS/18.jpeg"style="width: 20%; height: 20%;">
+               <hr>
+    <h3><i>Preparación Previa</i></h3>
+    <p> En general, esta prueba no requiere preparación compleja. Sin embargo, es importante considerar lo siguiente:
+<ul>
+      <li> <u><i>Ayuno:</i></u>No suele ser necesario, excepto si se va a administrar medio de contraste intravenoso.</li>
+      <li> <u><i>Medio de contraste:</i></u>Puede usarse en casos específicos para valorar mejor tejidos blandos, vasos o lesiones sospechosas. Informe si tiene alergias, problemas renales o está embarazada. </li>
+      <li><u><i>Retiro de objetos metálicos: </i></u>Deben retirarse joyas, piercings, gafas y otros objetos metálicos en el área de cabeza y cuello para evitar interferencias en la imagen.</li>
+        <li><u><i>Información clínica:</i> </u>Comunicar antecedentes quirúrgicos en la columna cervical, dolores persistentes, traumatismos recientes o síntomas neurológicos.</li>
+      </ul>
+      </p>
+               <hr>
+    <h3><i>Ventajas de la TC COLUMNA-CERVICAL</i></h3>
+    <ul>
+      <li><u><i>Visualización detallada de huesos cervicales y estructuras óseas.</i> </u></li>
+      <li><u><i>Diagnóstico rápido, especialmente en situaciones de trauma.</i> </u>  </li>
+      <li><u><i>Complemento útil en la planificación quirúrgica.</i> </u> </li>
+        <li><u><i> ermite evaluar alineación vertebral y presencia de lesiones agudas o crónicas. </i> </u>.</li>
+    </ul>
+               <hr>
+    <h3><i>Desventajas y consideraciones </i></h3>
+    <ul>
+        <li><u><i>Radiación ionizante: </i> </u>Aunque la dosis está controlada, debe justificarse médicamente su uso.</li>
+      <li><u><i>Menor resolución en tejidos blandos comparado con la resonancia magnética (RM).</i> </u>  </li>
+      <li><u><i>No recomendada en embarazo salvo casos de urgencia. </i> </u> </li>
+        <li><u><i> Riesgo bajo de reacciones al contraste si se utiliza. </i> </u>.</li>
+    </ul>
+               <hr>
+    <h3><i>Conclusión</i></h3>
+    <p>La TC de Columna Cervical es un examen de gran utilidad para detectar lesiones óseas y evaluar patologías cervicales con precisión y rapidez. Es una herramienta clave en contextos de trauma, dolor cervical persistente o sospecha de complicaciones estructurales. Siempre debe indicarse de forma personalizada según la situación clínica del paciente. </p>
+    <img src="FOTOS/19.jpeg"style="width: 20%; height: 20%;">
+  </div>
+          
+           <div id="preguntas" class="section">
+    <h2> <u> <i> PREGUNTAS FRECUENTES </i> </u></h2> 
+    <img src="FOTOS/20.jpeg"style="width: 20%; height: 20%;">
+    <h3> ¿Qué es una Tomografía Computarizada (TC) y en qué se diferencia de una radiografía convencional?</h3>
+               <p>La TC es una técnica de diagnóstico por imagen que combina rayos X con procesamiento computarizado para obtener imágenes detalladas en cortes transversales del cuerpo. A diferencia de una radiografía común, permite visualizar órganos, huesos y tejidos blandos con mayor precisión. </p>
+        <hr>
+    <h3>¿Es doloroso hacerse una TC?</h3>
+                <p> No. El procedimiento es completamente indoloro. Solo requiere que el paciente permanezca quieto mientras la camilla se desplaza dentro del escáner. </p>
+         <hr>
+    <h3>¿Necesito estar en ayunas antes del examen?</h3>
+                <p> Depende del tipo de TC. Si se utiliza medio de contraste, generalmente se recomienda un ayuno de 4 a 6 horas antes del estudio. Para estudios simples, no suele ser necesario.</p>
+         <hr>
+    <h3>¿Qué es el medio de contraste? ¿Siempre se usa?</h3>
+                   <p> Es una sustancia que se administra por vía oral o intravenosa para mejorar la visibilidad de ciertos órganos o estructuras. No siempre es necesario; su uso depende del tipo de estudio y del objetivo diagnóstico.</p>
+    <hr>
+               <h3>¿Puedo hacerme una TC si estoy embarazada o sospecho estarlo?</h3>
+                   <p> Se debe evitar la TC en mujeres embarazadas debido a la radiación, salvo en casos de urgencia. Si hay sospecha de embarazo, es fundamental informarlo al personal médico antes del examen.</p>
+         <hr>
+    <h3>¿Qué debo informar antes de realizarme el estudio?</h3>
+                   <p>Debe comunicar si tiene alergias, problemas renales, diabetes, si está embarazada o si ha tenido reacciones previas al contraste. </p>
+         <hr>
+    <h3>¿Puedo tomar mis medicamentos habituales antes del examen?</h3>
+                   <p>En la mayoría de los casos, sí. No obstante, debe informar qué medicamentos toma para recibir indicaciones específicas, sobre todo si se usa contraste.  </p>
+         <hr>
+    <h3>¿Qué pasa si tengo claustrofobia?</h3>
+                   <p> La mayoría de los escáneres TC son abiertos y bien iluminados, lo que reduce la sensación de encierro. Si aún tiene ansiedad, puede comentarlo con el personal para recibir apoyo.</p>
+         <hr>
+    <h3>¿Cuál es la diferencia entre una TC y una resonancia magnética (RM)?</h3>
+                   <p>La TC usa rayos X y es ideal para estructuras óseas, urgencias y estudios rápidos. La RM usa campos magnéticos, no emite radiación y es mejor para tejidos blandos como cerebro, músculos o médula espinal. </p>
+         <hr>
+    <h3>¿Cada cuánto tiempo puedo repetir una TC?</h3>
+                   <p> Solo cuando sea clínicamente necesario. Aunque la radiación está controlada, se recomienda evitar repeticiones frecuentes sin justificación médica.</p>
+               
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    .section { display: none; }
+    .section.active { display: block; }
+    .rating { font-size: 2rem; }
+    .star { cursor: pointer; color: #ccc; }
+    .star.hover, .star.selected { color: gold; }
+    .feedback-results { margin-top: 10px; font-size: 1.2rem; }
+    .thumbs-up, .thumbs-down { margin: 0 10px; }
+    canvas { max-width: 300px; margin: 20px auto; display: block; }
+  </style>
+  <div id="valoracion" class="section">
+    <h2>Valora Nuestra Página Web</h2>
+       <img src="FOTOS/21.jpeg"style="width: 25%; height: 25%;">
+    <div class="rating" id="estrellas"></div>
+    <div class="feedback-results">
+      <span class="thumb thumbs-up">👍</span><span id="positivas">0%</span>
+      <span class="thumb thumbs-down">👎</span><span id="negativas">0%</span>
+    </div>
+    <canvas id="graficoValoraciones"></canvas>
+  </div>
+<script>
+  function mostrarSeccion(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    // Si es la sección de valoración, actualizar el gráfico
+    if (id === 'valoracion') {
+      if (!window.graficoInicializado) {
+        inicializarGrafico();
+        window.graficoInicializado = true;
+      }
+      actualizarGrafico();
+    }
+  }
+
+  const estrellasDiv = document.getElementById('estrellas');
+  let valoraciones = [];
+
+  for (let i = 1; i <= 10; i++) {
+    const estrella = document.createElement('span');
+    estrella.innerHTML = '★';
+    estrella.classList.add('star');
+    estrella.dataset.valor = i;
+
+    estrella.addEventListener('mouseover', () => pintarEstrellas(i));
+    estrella.addEventListener('mouseout', () => pintarEstrellas(0));
+    estrella.addEventListener('click', () => guardarValoracion(i));
+
+    estrellasDiv.appendChild(estrella);
+  }
+
+  function pintarEstrellas(valor) {
+    document.querySelectorAll('.star').forEach(estrella => {
+      estrella.classList.remove('hover');
+      if (estrella.dataset.valor <= valor) {
+        estrella.classList.add('hover');
+      }
+    });
+  }
+
+  function guardarValoracion(valor) {
+    valoraciones.push(valor);
+    actualizarEstrellas(valor);
+    actualizarPorcentajes();
+    actualizarGrafico();
+  }
+
+  function actualizarEstrellas(valor) {
+    document.querySelectorAll('.star').forEach(estrella => {
+      estrella.classList.remove('selected');
+      if (estrella.dataset.valor <= valor) {
+        estrella.classList.add('selected');
+      }
+    });
+  }
+
+  function actualizarPorcentajes() {
+    const positivas = valoraciones.filter(v => v >= 7).length;
+    const total = valoraciones.length;
+    const negativas = total - positivas;
+
+    document.getElementById('positivas').innerText = total ? `${Math.round((positivas / total) * 100)}%` : '0%';
+    document.getElementById('negativas').innerText = total ? `${Math.round((negativas / total) * 100)}%` : '0%';
+  }
+
+  let grafico;
+  function inicializarGrafico() {
+    const ctx = document.getElementById('graficoValoraciones').getContext('2d');
+    grafico = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Buena valoración (7-10)', 'Mala valoración (1-6)'],
+        datasets: [{
+          data: [0, 0],
+          backgroundColor: ['#4CAF50', '#F44336'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  }
+
+  function actualizarGrafico() {
+    if (grafico) {
+      const positivas = valoraciones.filter(v => v >= 7).length;
+      const negativas = valoraciones.length - positivas;
+      grafico.data.datasets[0].data = [positivas, negativas];
+      grafico.update();
+    }
+  }
+</script>
+           <footer style="background-color: #317d25; color: white; text-align: center; padding: 15px 0; position: fixed; bottom: 0; width: 100%; font-size: 0.9rem;">
+  &copy; Ana Cabañero, Lourdes López y Edurne Marco
+</footer>
+</body>
+
+</html>
+

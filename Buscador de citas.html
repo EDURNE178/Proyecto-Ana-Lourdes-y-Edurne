@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Busca tu próxima Cita</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #317d25;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h2 {
+      color: #569d47;
+      text-align: center;
+      margin-bottom: 60px;
+         font-size: 3rem;
+        font-family:'Pacífico'
+    }
+
+    label {
+      font-weight: 600;
+      color: #559d46;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 2px solid #e8f5e9;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #4CAF50;
+      outline: none;
+      background-color: #e8f5e9;
+    }
+
+    button {
+      background-color: #559d46;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 25px;
+    }
+    button:hover {
+      background-color: #4CAF50;
+    }
+
+    #telefonoSection {
+      margin-top: 10px;
+      display: none;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(86, 157, 71, 0.3);
+    }
+    th, td {
+      border-bottom: 1px solid #e8f5e9;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 1rem;
+      color: #317d25;
+    }
+    th {
+      background-color: #569d47;
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:hover:not(:first-child) {
+      background-color: #e8f5e9;
+    }
+
+  </style>
+</head>
+<body>
+
+<h2><u><i> BUSCA TU PROXIMA CITA </i> </u> </h2>
+    <div style="text-align: center;">
+   <img src="FOTOS/22.png"style="width: 25%; height: 30%;" > 
+        </div>
+
+<label for="buscarNombre">Nombre y Apellidos:</label>
+<input type="text" id="buscarNombre" placeholder="Introduce el nombre completo o parcial" />
+<button onclick="buscarNombre()">Buscar</button>
+
+<div id="DNISection" style="display: none;">
+  <label for="buscarDNI">DNI:</label>
+  <input type="text" id="buscarDNI">
+  <button onclick="verificarDNI()">Verificar</button>
+</div>
+
+<table id="tablaCitas" aria-label="Lista de citas médicas">
+  <thead>
+    <tr>
+      <th>Nombre y Apellidos</th>
+      <th>Edad</th>
+      <th>Nº Historial</th>
+        <th>DNI</th>
+      <th>Tipo de Estudio</th>
+      <th>Fecha cita</th>
+      <th>Hora de Cita</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr style="display:none;"><td>Laura Gómez Sánchez</td><td>45</td><td>100235</td><td>12345678Z</td><td>TC Abdomen</td><td>19/5/2025</td><td>8:00</td><td>612 345 678</td><td>laura.gomez45@gmail.com</td></tr>
+<tr style="display:none;"><td>Manuel Pérez Ortega</td><td>63</td><td>100236</td><td>23456789X</td><td>TC Tórax</td><td>19/5/2025</td><td>8:20</td><td>689 112 233</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Sofía Ríos Fernández</td><td>34</td><td>100237</td><td>34567890A</td><td>TC Cabeza</td><td>19/5/2025</td><td>8:40</td><td>698 998 877</td><td>sofia.rios34@gmail.com</td></tr>
+<tr style="display:none;"><td>Alberto Muñoz Torres</td><td>72</td><td>100238</td><td>45678901B</td><td>TC Pelvis</td><td>19/5/2025</td><td>9:00</td><td>711 223 344</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Carmen Ruiz Morales</td><td>59</td><td>100239</td><td>56789012C</td><td>TC Tórax-Abdomen</td><td>19/5/2025</td><td>9:20</td><td>690 334  556</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Daniel Soto García</td><td>51</td><td>100240</td><td>67890123D</td><td>TC Cervical</td><td>19/5/2025</td><td>9:40</td><td>607 778 889</td><td>daniel.soto51@gmail.com</td></tr>
+<tr style="display:none;"><td>Nuria Herrera Vidal</td><td>29</td><td>100241</td><td>78901234E</td><td>TC Cráneo</td><td>19/5/2025</td><td>10:00</td><td>639 876 543</td><td>nuria.herrera29@gmail.com</td></tr>
+<tr style="display:none;"><td>Juan Carlos León Márquez</td><td>66</td><td>100242</td><td>89012345F</td><td>TC Abdomen-Pelvis</td><td>19/5/2025</td><td>10:20</td><td>690 432 198</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Paula Navarro Delgado</td><td>40</td><td>100243</td><td>90123456G</td><td>TC Tórax</td><td>19/5/2025</td><td>10:40</td><td>612 901 234</td><td>paula.navarro40@gmail.com</td></tr>
+<tr style="display:none;"><td>Marcos Vela Jiménez</td><td>77</td><td>100244</td><td>01234567H</td><td>TC Cráneo</td><td>19/5/2025</td><td>11:00</td><td>688 145 632</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Alicia Castro Ramos</td><td>33</td><td>100245</td><td>11223344J</td><td>TC Senos Paranasales</td><td>19/5/2025</td><td>11:20</td><td>699 512 340</td><td>alicia.castro33@gmail.com</td></tr>
+<tr style="display:none;"><td>Sergio Aguilar Domínguez</td><td>52</td><td>100246</td><td>22334455K</td><td>TC Abdomen</td><td>19/5/2025</td><td>11:40</td><td>607 741 852</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Elena Medina Cordero</td><td>61</td><td>100247</td><td>33445566L</td><td>TC Cuello</td><td>20/5/2025</td><td>12:00</td><td>688 123 456</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Hugo Torres Gil</td><td>39</td><td>100248</td><td>44556677M</td><td>TC Lumbar</td><td>20/5/2025</td><td>12:20</td><td>679 654 321</td><td>hugo.torres39@gmail.com</td></tr>
+<tr style="display:none;"><td>Miriam Campos Salas</td><td>44</td><td>100249</td><td>55667788N</td><td>TC Tórax-Abdomen</td><td>20/5/2025</td><td>12:40</td><td>699 888 999</td><td>miriam.campos44@gmail.com</td></tr>
+<tr style="display:none;"><td>Víctor Mármol Pineda</td><td>55</td><td>100250</td><td>66778899P</td><td>TC Pelvis</td><td>20/5/2025</td><td>13:00</td><td>690 258 147</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Andrea Lozano Peña</td><td>36</td><td>100251</td><td>77889900Q</td><td>TC Columna-Cervical</td><td>20/5/2025</td><td>13:20</td><td>677 741 369</td><td>andrea.lozano36@gmail.com</td></tr>
+<tr style="display:none;"><td>Raúl Castillo Molina</td><td>70</td><td>100252</td><td>88990011R</td><td>TC Cráneo</td><td>20/5/2025</td><td>13:40</td><td>622 314 555</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Clara Bernal Sáez</td><td>27</td><td>100253</td><td>99001122S</td><td>TC Abdomen</td><td>20/5/2025</td><td>14:00</td><td>698 741 698</td><td>clara.bernal27@gmail.com</td></tr>
+<tr style="display:none;"><td>Tomás Robles Castaño</td><td>48</td><td>100254</td><td>10111213T</td><td>TC Tórax</td><td>20/5/2025</td><td>14:20</td><td>655 145 963</td><td>tomas.robles48@gmail.com</td></tr>
+<tr style="display:none;"><td>Eva Jiménez Moreno</td><td>64</td><td>100255</td><td>12131415V</td><td>TC Cabeza-Cuello</td><td>20/5/2025</td><td>14:40</td><td>699 698 321</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>David Ramos Vera</td><td>59</td><td>100256</td><td>13141516W</td><td>TC Cráneo</td><td>21/5/2025</td><td>15:00</td><td>611 303 505</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Patricia Fuentes León</td><td>38</td><td>100257</td><td>14151617X</td><td>TC Tórax-Abdomen</td><td>21/5/2025</td><td>15:20</td><td>690 001 002</td><td>patricia.fuentes38@gmail.com</td></tr>
+<tr style="display:none;"><td>Gonzalo Pérez Alarcón</td><td>42</td><td>100258</td><td>15161718Y</td><td>TC Pelvis</td><td>21/5/2025</td><td>15:40</td><td>620 333 444</td><td>gonzalo.perez42@gmail.com</td></tr>
+<tr style="display:none;"><td>Inés Sánchez Bravo</td><td>57</td><td>100259</td><td>16171819Z</td><td>TC Abdomen-Pelvis</td><td>21/5/2025</td><td>16:00</td><td>699 111 122</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Lucas Romero Aguilera</td><td>65</td><td>100260</td><td>17181920A</td><td>TC Columna-Dorsal</td><td>21/5/2025</td><td>16:20</td><td>688 007 891</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Julia Ortega Ferrer</td><td>30</td><td>100261</td><td>18192021B</td><td>TC Senos Paranasales</td><td>21/5/2025</td><td>16:40</td><td>697 777 888</td><td>julia.ortega30@gmail.com</td></tr>
+<tr style="display:none;"><td>Alejandro Núñez Beltrán</td><td>50</td><td>100262</td><td>19202122C</td><td>TC Cráneo</td><td>21/5/2025</td><td>17:00</td><td>611 159 263</td><td>alejandro.nunez50@gmail.com</td></tr>
+<tr style="display:none;"><td>Irene Morales Calderón</td><td>46</td><td>100263</td><td>20212223D</td><td>TC Cuello</td><td>21/5/2025</td><td>17:20</td><td>677 003 404</td><td>irene.morales46@gmail.com</td></tr>
+<tr style="display:none;"><td>Pablo Vázquez Andrade</td><td>58</td><td>100264</td><td>21222324E</td><td>TC Abdomen</td><td>21/5/2025</td><td>17:40</td><td>698 320 478</td><td>No tiene</td></tr>
+<tr style="display:none;"><td>Noelia Crespo Ibáñez</td><td>43</td><td>100265</td><td>22232425F</td><td>TC Tórax</td><td>21/5/2025</td><td>18:00</td><td>690 602 947</td><td>noelia.crespo43@gmail.com</td></tr>
+
+
+
+  </tbody>
+</table>
+
+<script>
+  let filasEncontradas = [];
+
+  function buscarNombre() {
+  const input = document.getElementById('buscarNombre').value.toLowerCase().trim();
+  const filas = document.querySelectorAll('#tablaCitas tbody tr');
+  filasEncontradas = [];
+
+  if (input === '') {
+    alert('Por favor, introduce un nombre para buscar.');
+    return;
+  }
+
+  filas.forEach(fila => {
+    fila.style.display = 'none'; // ocultar todas inicialmente
+    const nombre = fila.cells[0].textContent.toLowerCase();
+    if (nombre.includes(input)) {
+      filasEncontradas.push(fila);
+    }
+  });
+
+  if (filasEncontradas.length === 0) {
+    alert('No se encontró ninguna persona con ese nombre.');
+    document.getElementById('DNISection').style.display = 'none';
+    return;
+  }
+
+  // Solo mostrar la sección DNI si hay 1 o más resultados
+  document.getElementById('DNISection').style.display = 'block';
+
+  // No mostrar aún las filas, solo las encontradas se mostrarán al validar el DNI
+  filasEncontradas.forEach(fila => fila.style.display = 'none');
+}
+
+function verificarDNI() {
+  const DNIInput = document.getElementById('buscarDNI').value.trim();
+  if (DNIInput === '') {
+    alert('Por favor, introduce un número de DNI para verificar.');
+    return;
+  }
+
+  let encontrado = false;
+  filasEncontradas.forEach(fila => {
+    const DNI = fila.cells[3].textContent.trim();
+    if (DNI === DNIInput) {
+      fila.style.display = '';  // Mostrar solo la fila que coincide
+      encontrado = true;
+    } else {
+      fila.style.display = 'none';
+    }
+  });
+
+  if (!encontrado) {
+    alert('El DNI no coincide con el nombre indicado.');
+    filasEncontradas.forEach(fila => fila.style.display = 'none');
+  }
+}
+
+</script>
+
+    <footer style="background-color: #317d25; color: white; text-align: center; padding: 15px 0; position: fixed; bottom: 0; width: 100%; font-size: 0.9rem;">
+  &copy; Ana Cabañero, Lourdes López y Edurne Marco
+</footer>
+
+</body>
+</html>
